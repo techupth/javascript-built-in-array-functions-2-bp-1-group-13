@@ -374,21 +374,16 @@ const bills = [
 ];
 
 // Start coding here
-function locationSum(data){
-    
-    let locationT = {}
-
-    for (let i of data) {
-        if (locationT.hasOwnProperty(i.location)) {
-            locationT[i.location] = locationT[i.location] + i.total
-        }
-        else {
-            locationT[i.location] = i.total
-        }
+function locationSum(data , currentdata){
+    if (data.hasOwnProperty(currentdata.location)) {
+        data[currentdata.location] = data[currentdata.location] + currentdata.total
+    }else{
+        data[currentdata.location] = currentdata.total
     }
-
-    return locationT
+    return data
 }
-const totalPaidByLocation  = locationSum(bills)
+
+const totalPaidByLocation  = bills.reduce(locationSum , {})
+
 console.log(totalPaidByLocation)
 
