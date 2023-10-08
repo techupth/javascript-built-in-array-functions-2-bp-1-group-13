@@ -374,3 +374,19 @@ const bills = [
 ];
 
 // Start coding here
+
+let totalAmount ;
+
+function sum (arrayNumber , currentNumber) {
+  return arrayNumber + currentNumber
+}
+
+function findTotalAmount (bills) {
+  let listTotalAmount =  bills.map((bills) => bills.total);
+  let totalAmount = listTotalAmount.reduce(sum , 0)
+  return "Total bill transaction is " + totalAmount
+}
+
+let onlyMemberBills = findTotalAmount (bills)
+
+console.log(onlyMemberBills)

@@ -374,4 +374,12 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+
+function findMember(arrayBills){
+  let memberNotNull = arrayBills.filter((arrayBills) => arrayBills.member !== null)
+  return memberNotNull.map((memberNotNull) => memberNotNull.member.name)
+}
+
+const billMembers =  findMember(bills)
+
+console.log(billMembers)

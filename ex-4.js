@@ -374,4 +374,26 @@ const bills = [
 ];
 
 // Start coding here
-const totalMembers;
+function findMember(arrayBills){
+  let memberNotNull = arrayBills.filter((arrayBills) => arrayBills.member !== null)
+  return memberNotNull.map((memberNotNull) => memberNotNull.member.name)
+}
+
+function checkMembers(arrayBills ,findMember) {
+  let billMembersArray = findMember(arrayBills)
+  let newArray = [];
+
+  for (let i in billMembersArray) {
+    if (billMembersArray.indexOf(billMembersArray[i]) === Number(i)) { 
+      newArray.push(billMembersArray[i])
+    }
+  }
+
+  return "Unique Members Count: " + newArray.length
+}
+
+let totalMembers  = checkMembers(bills , findMember);
+
+console.log(totalMembers)
+
+//const totalMembers ;
