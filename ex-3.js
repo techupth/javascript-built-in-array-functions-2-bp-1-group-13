@@ -372,6 +372,9 @@ const bills = [
     pointRate: 0.01,
   },
 ];
-
-// Start coding here
-const billMembers;
+function findMember(Bills){
+  let memberNotNull = Bills.filter((Bills) => Bills.member !== null)
+  return memberNotNull.map((memberNotNull) => memberNotNull.member.name)
+}
+const billMembers = findMember(bills)
+console.log(billMembers)

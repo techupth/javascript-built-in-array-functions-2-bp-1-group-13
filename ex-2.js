@@ -373,6 +373,10 @@ const bills = [
   },
 ];
 
-// Start coding here
+let noNull = (bills)=>{
+return bills.member !== null
 
-const newBills;
+}
+
+const newbills = bills.filter(noNull)
+console.log(newbills)

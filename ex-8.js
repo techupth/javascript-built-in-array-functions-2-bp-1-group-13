@@ -370,9 +370,15 @@ const bills = [
             age: 26,
         },
         pointRate: 0.01,
-    },
+    }
 ];
+function totalLocationName(accumulater,currentValue){
+if(accumulater.hasOwnProperty(currentValue.location)){
+    accumulater[currentValue.location] = currentValue.location + currentValue.total}
+else{accumulater[currentValue.location] = currentValue.total}
+return accumulater
+ 
+}
 
-// Start coding here
-
-const totalPaidByLocation;
+const totalPaidByLocation = bills.reduce(totalLocationName,{})
+console.log(totalPaidByLocation)

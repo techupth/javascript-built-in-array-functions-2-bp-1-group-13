@@ -372,5 +372,11 @@ const bills = [
     pointRate: 0.01,
   },
 ];
-
-// Start coding here
+let sum = (accumulater,currentValue)=>{
+ return accumulater + currentValue
+}
+let totalAmout = (bills)=>{
+ const price = bills.map((bills) => bills.total)
+ return price.reduce(sum,0)
+}
+console.log("Total bill transaction is " + totalAmout(bills))

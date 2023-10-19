@@ -373,5 +373,9 @@ const bills = [
   },
 ];
 
-// Start coding here
-const totalMembers;
+let noNull = (Bills)=>{
+ let rejectNull = Bills.filter((Bills) => Bills.member !== null)
+ return rejectNull.map((rejectNull) => rejectNull.member.name) 
+}
+let nameNoNull = noNull(bills)
+console.log(nameNoNull)
