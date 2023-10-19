@@ -377,5 +377,12 @@ let noNull = (Bills)=>{
  let rejectNull = Bills.filter((Bills) => Bills.member !== null)
  return rejectNull.map((rejectNull) => rejectNull.member.name) 
 }
-let nameNoNull = noNull(bills)
-console.log(nameNoNull)
+function totalMember(bills){
+ let memberName = noNull(bills)
+ for(let i in memberName)
+ if(memberName[i].indexOf(memberName[i] === Number[i])){
+   return "Unique Members Count : " + memberName.length
+ }
+}
+let allNumberMember = totalMember(bills)
+console.log(allNumberMember)
